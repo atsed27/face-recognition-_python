@@ -24,6 +24,7 @@ class FaceRecognition:
     known_face_encodings = []
     known_face_names = []
     process_current_frame = True
+    
 
     def __init__(self):
         self.encode_faces()
@@ -46,7 +47,7 @@ class FaceRecognition:
         while True:
             ret, frame = video_capture.read()
 
-            # Only process every other frame of video to save time
+           
             if self.process_current_frame:
                 # Resize frame of video to 1/4 size for faster face recognition processing
                 small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
